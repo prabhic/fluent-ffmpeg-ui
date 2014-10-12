@@ -1,3 +1,5 @@
+NOTE: Not yet functional
+
 # Fluent FFmpeg UI
 
 This is  GUI for FFmpeg based on fluent ffmpeg API https://github.com/fluent-ffmpeg/node-fluent-ffmpeg
