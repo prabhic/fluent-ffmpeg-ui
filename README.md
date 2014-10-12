@@ -40,7 +40,6 @@ Merge `seed` to `master` branch:
 
 ## More Details
 
-https://tldrlegal.com/license/mit-license
 
 ## Next Steps
 
