@@ -7,6 +7,8 @@ This application is built using https://github.com/jgrenon/angular-desktop-app,
 This project is a work in progress. There are currently no test available yet.
 More features will be added as I have time available. Feel free to [contribute](https://github.com/prabhic/fluent-ffmpeg-ui#next-steps)!
 
+![alt tag](https://raw.githubusercontent.com/prabhic/fluent-ffmpeg-ui/master/src/images/ScreenShot.png)
+
 # Release Notes
 
 Currenlty I am developing on mac and tested on the same.
