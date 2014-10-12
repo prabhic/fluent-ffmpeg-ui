@@ -1,0 +1,233 @@
+@import 'bootstrap/bootstrap';
+// Override any Bootstrap variables here
+ body {
+    //margin: 10px;
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     min-width: 1280px;
+     min-height: 720px;
+     background-color: #8D3328;
+}
+.navbar-brand {
+    img {
+        height: 25px;
+    }
+}
+.page-header {
+    img {
+        display: block;
+        margin: auto;
+        width: 400px;
+    }
+}
+
+button.btn.equalsize {
+//    height: 0;
+//    padding-bottom: 20%;
+//    width: 20%;
+////    margin-left: 80%;
+    margin-left: 0;
+    font-size: 56px;
+    border-radius: 0;
+    width: 86px;
+    height: 86px;
+    top:0;
+    color:#8D3328;
+}
+
+input[type=text] {
+    width:60px;
+}
+
+input[type=text].path {
+    width:500px;
+}
+
+.vMiddleAlign {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hSpace {
+    //display: inline-block;
+    min-width: 85px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.hSpaceSimpleOptions {
+    //display: inline-block;
+    min-width: 125px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.btn {
+    width: 60px;
+    height: 34px;
+    vertical-align: top;
+    margin-left: 15px;
+
+}
+
+.input-group-addon{
+    background-color: inherit;
+    border: 0;
+}
+.configpanel {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    .header {
+        height: 20%;
+        width: 100%;
+        .executebuttons{
+            display: inline-block;
+            width:10%;
+            float: left;
+        }    
+        .simpleoptions{
+            min-height: 86px;
+            width:60%;
+            padding-left: 20px;
+            display: inline-block;
+            
+            .input-group-addon {
+                color:#dce1de;
+            }
+            .source {
+                padding-top: 10px;
+                height: 50%;
+            }
+            .target{
+                height: 50%;
+            }
+        }
+        .logo {
+            width:30%;
+            display: inline-block;
+            font-size: 30px;
+            font-style: oblique;
+            vertical-align: top;
+            padding-right: 20px;
+            padding-top: 20px;
+            text-align: right;
+            color:#dce1de;
+            
+        }
+    }
+    .advancedoptions{
+        height: 80%;
+        overflow: scroll;
+         background-color: #DCE1DE;
+        .source {
+            .header {
+                width: 100%;
+                height: 40px;
+                h4 {
+                    display: inline-block;
+                    float: left;
+                    width: 200px;
+                }
+            }
+            display: inline-block;
+            float: left;
+            width:22%;
+            min-width: 250px;
+            padding: 5px;
+            height: 100%;
+            //border:1px solid grey;
+            border-right: 1px solid grey;
+            box-shadow: 1px 6px 4px grey;
+        }
+        .target{
+            display: inline-block;
+            width:78%;
+            height: 100%;
+            .header {
+                width: 100%;
+                height: 40px;
+                h4 {
+                    display: inline-block;
+                    float: left;
+                    width: 200px;
+                }
+                p {
+                    display: inline-block;
+                    float: left;
+                    width: 125px;
+                }
+            }            
+            .video {
+                display: inline-block;
+                float: left;
+                width:65%;
+                border-right: 1px solid grey;
+                box-shadow: 1px 6px 4px grey;
+                padding-left: 5px;
+                .basic {
+                    clear: both;
+                    display: inline-block;
+                    float: left;
+                    width:50%;
+                    min-width: 250px;
+                    //border: 1px solid rgb(56,145,200);
+                    padding: 5px;
+                    
+                    .hSpace {
+                        //display: inline-block;
+                        min-width: 100px;
+                        text-align: right;
+                        padding-right: 5px;
+                    }
+
+
+                }
+                .options {
+                    display: inline-block;
+                    width: 50%;
+                    vertical-align: top;
+                    min-width: 190px;
+                    //border: 1px solid #00ff80;
+                    padding: 5px;
+
+                }
+            
+            }
+            .audio {
+                //background-color: #A6A39A;
+                display: inline-block;
+                float: right;
+                width:35%;
+                min-width: 240px;
+                padding: 5px;
+                //border: 1px solid red;
+
+            }
+        }
+    }
+} 
+
+.outputpanel {
+    position: absolute;
+    top:60%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    
+    .command {
+        height: 100%;
+        background-color: black;
+        color: white;
+    } 
+    .output {
+        height: 100%;
+        color: #dce1de;
+        background-color: rgb(26,26,26);
+        overflow: scroll;
+    }
+}

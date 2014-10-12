@@ -1,0 +1,15 @@
+node_modules
+/bin
+/src/lib
+*.db
+data
+.idea
+releases/
+cache/
+
+/cache
+/releases
+
+nbproject
+lib/
+

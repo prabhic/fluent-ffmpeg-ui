@@ -1,0 +1,148 @@
+//.navbar.navbar-fixed-top.navbar-inverse(role="navigation")
+  .navbar-header
+    .navbar-brand: a(href="#"): Fluent Fluent ffmpeg UI
+    
+.configpanel
+    .header
+        .executebuttons
+            button.btn.btn-default.equalsize.glyphicon.glyphicon-play(ng-click='runFluentCommand()')
+        .simpleoptions
+            .source
+                .input-group 
+                     span.input-group-addon.hSpaceSimpleOptions Source
+                     input(type='text', ng-model='source.path').path.form-control#sourcepathDisplay
+                     button.btn.btn-default(ng-click='selectSourceFile()')
+
+            .target
+                .input-group
+                     span.input-group-addon.hSpaceSimpleOptions Destination
+                     input(type='text').path.form-control
+                     button.btn.btn-default
+
+        .logo
+            span Fluent FFmpeg UI
+    .advancedoptions
+        .source
+             .header
+                h4 Source Settings
+             .input-group  
+                span.input-group-addon.hSpace Format
+                ui-select( ng-model="country.selected", theme="selectize", ng-disabled="disabled", style="width: 150px;").vMiddleAlign.form-control
+                    ui-select-match( placeholder="Select")
+                        {{$select.selected.name}}
+                    ui-select-choices( repeat="country in countries | filter: $select.search")
+                        span(ng-bind-html="country.name | highlight: $select.search")
+                        small(ng-bind-html="country.code | highlight: $select.search")  
+             .input-group   
+                span.input-group-addon.hSpace FPS
+                input(type='text').form-control
+               
+             .input-group 
+                span.input-group-addon.hSpace Native
+                input(type='checkbox').form-control 
+             .input-group 
+                span.input-group-addon.hSpace Seek 
+                input(type='text').form-control
+             .input-group
+                span.input-group-addon.hSpace Loop 
+                input(type='text').form-control
+             .input-group
+                span.input-group-addon.hSpace Options 
+                input(type='text').form-control
+
+        .target
+            .video
+                .header
+                    h4 Target Video Settings
+                    p 
+                        span.hSpace No Video
+                        input(type='checkbox')
+                .basic
+                    .input-group
+                        span.input-group-addon.hSpace Codec
+                        ui-select( ng-model="country.selected", theme="selectize", ng-disabled="disabled", style="width: 150px;").vMiddleAlign.form-control
+                            ui-select-match( placeholder="Select")
+                                {{$select.selected.name}}
+                            ui-select-choices( repeat="country in countries | filter: $select.search")
+                                span(ng-bind-html="country.name | highlight: $select.search")
+                                small(ng-bind-html="country.code | highlight: $select.search")  
+                    .input-group
+                        span.input-group-addon.hSpace Bitrate
+                        input(type='text').form-control
+                    //filters
+                    .input-group
+                        span.input-group-addon.hSpace FPS
+                        input(type='text').form-control
+                    .input-group
+                        span.input-group-addon.hSpace Frames
+                        input(type='text').form-control
+                    .input-group
+                        span.input-group-addon.hSpace Size
+                        input(type='text').form-control
+                    .input-group
+                        span.input-group-addon.hSpace Aspect Ratio
+                        input(type='text').form-control
+                    .input-group
+                        span.input-group-addon.hSpace AutoPad
+                        input(type='text').form-control
+                    .input-group
+                        span.input-group-addon.hSpace DisplayAspectRatio 
+                        input(type='checkbox').form-control
+                .options
+                    .input-group
+                        span.input-group-addon.hSpace Seek
+                        input(type='text').form-control
+                    .input-group
+                        span.input-group-addon.hSpace Format
+                        ui-select( ng-model="country.selected", theme="selectize", ng-disabled="disabled", style="width: 150px;").vMiddleAlign.form-control
+                            ui-select-match( placeholder="Select")
+                                {{$select.selected.name}}
+                            ui-select-choices( repeat="country in countries | filter: $select.search")
+                                span(ng-bind-html="country.name | highlight: $select.search")
+                                small(ng-bind-html="country.code | highlight: $select.search")  
+                        //flvmeta
+                    .input-group
+                        span.input-group-addon.hSpace Options
+                        input(type='text').form-control
+                    .input-group
+                        span.input-group-addon.hSpace Preset
+                        input(type='text').form-control
+                //complexfilter
+            .audio
+                .header
+                    h4 Target Audio Settings
+                    p 
+                        span.hSpace No Video
+                        input(type='checkbox')
+                .input-group
+                    span.input-group-addon.hSpace Codec
+                    ui-select( ng-model="country.selected", theme="selectize", ng-disabled="disabled", style="width: 150px;").vMiddleAlign.form-control
+                            ui-select-match( placeholder="Select")
+                                {{$select.selected.name}}
+                            ui-select-choices( repeat="country in countries | filter: $select.search")
+                                span(ng-bind-html="country.name | highlight: $select.search")
+                                small(ng-bind-html="country.code | highlight: $select.search")  
+                .input-group
+                    span.input-group-addon.hSpace Bitrate
+                    input(type='text').form-control
+                .input-group
+                    span.input-group-addon.hSpace Channels
+                    input(type='text').form-control
+                .input-group
+                    span.input-group-addon.hSpace Frequency
+                    input(type='text').form-control
+                .input-group
+                    span.input-group-addon.hSpace Quality
+                    input(type='text').form-control
+
+                //filters
+                .input-group
+                    span.input-group-addon.hSpace Options
+                    input(type='text').form-control
+
+
+.outputpanel
+    //  .col-md-8.command(ui-view='commandView')
+        p command
+    .col-md-12.output(ui-view='commandOutput')
+        p output

@@ -1,0 +1,36 @@
+{
+  "name": "fluent-ffmpeg-ui",
+  "description": "GUI for node-fluent-ffmpeg ",
+  "version": "1.2.0",
+  "main": "index.html",
+  "author":{
+      "name": "Prabhanjana Kumar C",
+      "url": "https://github.com/prabhic"
+  },
+  "contributors":[{
+        "name": "Prabhanjana Kumar C",
+        "url" : "https://github.com/prabhic"
+    }],
+  "window": {
+    "toolbar": false,
+    "width": 1280,
+    "height": 720,
+    "icon":"images/favicon.ico"
+  },
+  "dependencies": {
+    "jade": "~0.35.0",
+    "passport": "~0.1.17",
+    "passport-twitter": "~1.0.2",
+    "request": "~2.27.0",
+    "querystring": "~0.2.0",
+    "moment": "~2.4.0",
+    "shortid": "~2.0.0",
+    "tungus": "0.0.2",
+    "mongoose": "~3.8.7",
+    "fluent-ffmpeg": "2.0.0-rc2"
+  },
+  "scripts":{
+    "postinstall" : "node ../etc/scripts/postinstall.js"
+  }
+
+}
