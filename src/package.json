@@ -12,7 +12,7 @@
         "url" : "https://github.com/prabhic"
     }],
   "window": {
-    "toolbar": true,
+    "toolbar": false,
     "width": 1280,
     "height": 720,
     "icon":"images/favicon.ico"
