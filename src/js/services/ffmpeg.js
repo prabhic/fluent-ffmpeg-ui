@@ -3,29 +3,23 @@ define(['./module'], function (services) {
 
     services.factory('ffmpeg', [function() {
 
-        var tungus = require('tungus');
         var fluentffmpeg = require('fluent-ffmpeg');
         var service = {};
 
         console.log("creating ffmpeg service");
 
-        service.executeComand = function() {
-        
-            
-            var ffmpegpath =  '/Users/prabhank/Documents/nodeserver/opensource/fluent-ffmpeg-ui/experiments/angular-desktop-app/bin/ffmpeg/ffmpeg';
-            var inputfile = '/Users/prabhank/Downloads/BigBuckBunny_320x180.mp4';
-            var outputfile = '/Users/prabhank/Downloads/BigBuckBunny_320x180.avi';
+        service.executeComand = function(src,dst) {
+           
+            var inputfile = src.path;
+            var outputfile = dst.path;
             
             var command = fluentffmpeg(inputfile);
             
-            command.setFfmpegPath(ffmpegpath);
-            command.setFfprobePath(ffmpegpath);
             command.on('start', function(commandLine) {    console.log('Spawned Ffmpeg with command: ' + commandLine);});
             command.on('end', function() {    console.log('Transcoding succeeded !');});
             command.on('codecData', function(data) {    console.log('Input is ' + data.audio + ' audio ' +      'with ' + data.video + ' video');});
             command.on('progress', function(progress) {console.log('Processing: ' + progress.percent + '% done');});
             command.save(outputfile);
-          //  command.run();
         }
         return service;
     }]);

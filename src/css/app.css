@@ -6033,6 +6033,11 @@ input[type=text].path {
 .configpanel .header .simpleoptions .input-group-addon {
   color: #dce1de;
 }
+.configpanel .header .simpleoptions button.btn {
+  width: 50px;
+  background-color: #8D3328;
+  color: white;
+}
 .configpanel .header .simpleoptions .source {
   padding-top: 10px;
   height: 50%;

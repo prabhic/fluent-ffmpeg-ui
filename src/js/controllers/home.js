@@ -4,11 +4,12 @@ define(['./module'], function (controllers) {
     controllers.controller('HomeCtrl', ['$scope', '$state', 'nwService', 'ffmpeg',function ($scope, $state,nwService,ffmpeg) {
 
         $scope.source = {path:'source file'}
+        $scope.destination = {path:'destination file'}
         
         $scope.selectSourceFile = function() {
             
              nwService.openFileDialog({
-                    accept: '.js,.xml'
+                    accept: '.mp4,.avi,.mov,.flv,.mkv,.asf,.wmv,.mpeg,.mpg,.ogg,.3gp'
                 }).then(function(result) {
                     if(result) {
                         console.log("Resulting file is", result);
@@ -23,6 +24,25 @@ define(['./module'], function (controllers) {
                     $state.go('home');
                 });
         }
+        
+        $scope.selectSaveAsFile = function() {
+            
+             nwService.openSaveDialog({
+                    accept: '.avi,.mp4'
+                }).then(function(result) {
+                    if(result) {
+                        console.log("Resulting file is", result);
+                        //$state.go('file_view', {path: result});
+                        //set to
+                        $scope.destination.path = result;
+                    }
+                    else
+                        $state.go('home');
+                }, function(err){
+                    console.log("An error occured", err);
+                    $state.go('home');
+                });
+        }        
         
         var loggerEnabled = false;
          $scope.runFluentCommand = function() {
@@ -45,7 +65,7 @@ define(['./module'], function (controllers) {
                 }
             })();
              }
-            ffmpeg.executeComand();
+            ffmpeg.executeComand($scope.source,$scope.destination);
          }
          
          $scope.country = {};

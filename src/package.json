@@ -1,7 +1,7 @@
 {
   "name": "fluent-ffmpeg-ui",
   "description": "GUI for node-fluent-ffmpeg ",
-  "version": "1.2.0",
+  "version": "0.1.0",
   "main": "index.html",
   "author":{
       "name": "Prabhanjana Kumar C",
@@ -12,7 +12,7 @@
         "url" : "https://github.com/prabhic"
     }],
   "window": {
-    "toolbar": false,
+    "toolbar": true,
     "width": 1280,
     "height": 720,
     "icon":"images/favicon.ico"

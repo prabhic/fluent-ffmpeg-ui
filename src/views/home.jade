@@ -1,7 +1,6 @@
 //.navbar.navbar-fixed-top.navbar-inverse(role="navigation")
   .navbar-header
     .navbar-brand: a(href="#"): Fluent Fluent ffmpeg UI
-    
 .configpanel
     .header
         .executebuttons
@@ -11,13 +10,13 @@
                 .input-group 
                      span.input-group-addon.hSpaceSimpleOptions Source
                      input(type='text', ng-model='source.path').path.form-control#sourcepathDisplay
-                     button.btn.btn-default(ng-click='selectSourceFile()')
+                     button.btn.btn-default(ng-click='selectSourceFile()').glyphicon.glyphicon-folder-open
 
             .target
                 .input-group
                      span.input-group-addon.hSpaceSimpleOptions Destination
-                     input(type='text').path.form-control
-                     button.btn.btn-default
+                     input(type='text', ng-model='destination.path').path.form-control
+                     button.btn.btn-default(ng-click='selectSaveAsFile()').glyphicon.glyphicon-folder-open
 
         .logo
             span Fluent FFmpeg UI

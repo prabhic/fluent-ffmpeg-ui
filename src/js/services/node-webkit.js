@@ -1,7 +1,7 @@
 define(['./module', '_'], function (services, _) {
     'use strict';
 
-    services.service('nwService', ['$rootScope', '$q', function($rootScope, $q)  {
+    services.service('nwService', ['$rootScope', '$q', '$timeout', function($rootScope, $q, $timeout)  {
 
         // Expose gui and main window
         var gui = this.gui = require("nw.gui");
@@ -77,9 +77,52 @@ define(['./module', '_'], function (services, _) {
                 evt.preventDefault();
                 result.resolve(false);
             });
-            $dlg.trigger('click');
+            
+            $timeout(function(){
+                $dlg.trigger('click');
+            }, 0, false);
+            
             return result.promise;
         };
+        
+        /**
+         * Open the standard file dialog.
+         *
+         * @param cfg
+         */
+        this.openSaveDialog = function(cfg) {
+            cfg = cfg || {};
+            var result = $q.defer();
+            var $dlg = $('#fileSaveDialog');
+            if(!$dlg) {
+                $dlg = $("body").append('<input style="display:none;" id="fileSaveDialog" type="file" nwsaveas="output.avi" />');
+            }
+
+            if(cfg.accept) {
+                $dlg.attr('accept', cfg.accept);
+            }
+
+            $dlg.one('change', function(evt) {
+                result.resolve($(this).val());
+                evt.preventDefault();
+            });
+            $dlg.one('cancel', function(evt) {
+                console.log("Cancel was called");
+                evt.preventDefault();
+                result.resolve(false);
+            });
+            $dlg.one('close', function(evt) {
+                console.log("Close was called");
+                evt.preventDefault();
+                result.resolve(false);
+            });
+            
+            $timeout(function(){
+                $dlg.trigger('click');
+            }, 0, false);
+            
+            return result.promise;
+        };        
 
         function createMenuItems(menu, items) {
 
